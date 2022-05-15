@@ -39,5 +39,28 @@ public class Main {
         System.out.println(words);
         Task4ShowNumberOfDoubles task4 = new Task4ShowNumberOfDoubles();
         task4.printNumberOfDoubles(words);
+        System.out.println("------------  конец задачи 4 ------------ ");
+
+// ********* Задача 5 (подсчет суммы с дублями) *******
+        nums = new ArrayList<>(List.of(2, 2, 3, 4, 5, 6, 6, 6, 7, 7, 8, 8, 9)); // (0 0 1 1 1 0 0 0 0 0 0 0 1)
+        Task5SumOfDoubles task5 = new Task5SumOfDoubles();
+        task5.printSumOfDoubles(nums);
+        nums = new ArrayList<>(List.of(3, 5, 6, 5, 7, 7, 8, 9, 10, 11, 12, 13, 14, 15, 10));
+        task5.printSumOfDoubles(nums);
+        System.out.println("------------  конец задачи 5 ------------ ");
+
+// ********* Задача 6 (проверка на одинаковые буквы) *******
+        Task6SameChars task6 = new Task6SameChars();
+        String word1 = "ab";
+        String word2 = "abba";
+        task6.areTheSameChars(word1, word2);
+
+//        word2 = "ab";
+//        task6.areTheSameChars(word1, word2);
+//
+//        word1 = "abc";
+//        task6.areTheSameChars(word1, word2);
+//        word2 = "abccba";
+//        task6.areTheSameChars(word1, word2);
     }
 }
