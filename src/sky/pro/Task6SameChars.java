@@ -16,15 +16,21 @@ public class Task6SameChars {
         for (char c : secondWord.toCharArray()) {
             secondList.add(c);
         }
+        System.out.println("firstList = " + firstList + "    ||||    secondList = " + secondList);
 // ========  сравниваем посимвольно каждый List =============
         isDifferent = isDifferentWords(firstList, secondList);
-        printFalseTrue(isDifferent, firstWord, secondWord);
+
+        printFalse(firstWord, secondWord);
         if (isDifferent) {
             return;
         }
 // ----------  меняем местами списки ----------------------------------
         isDifferent = isDifferentWords(secondList, firstList);
-        printFalseTrue(isDifferent, firstWord, secondWord);
+        System.out.println("isDifferent = " + isDifferent);
+        printFalse(firstWord, secondWord);
+        if (!isDifferent) {
+            System.out.println(firstWord + ", " + secondWord + " -> " + "true");
+        }
     }
 
     // ********* внутренний метод, сравнивающий посимвольно  List ************
@@ -38,10 +44,8 @@ public class Task6SameChars {
     }
 
     // ********* внутренний метод, печатающий fALSE ************
-    private void printFalseTrue(boolean isDiff, String firstWord, String secondWord) {
-        if (isDiff) {
-            System.out.println(firstWord + ", " + secondWord + " -> " + isDiff);
-        }
+    private void printFalse(String firstWord, String secondWord) {
+            System.out.println(firstWord + ", " + secondWord + " -> " + "false");
     }
 
 }
