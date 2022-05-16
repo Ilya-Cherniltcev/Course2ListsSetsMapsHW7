@@ -5,10 +5,9 @@ import java.util.List;
 
 public class Task7Anagram {
     public void AreTheyAnagrams(String word1, String word2) {
-        Task6SameChars task6 = new Task6SameChars();
 // ------ проверяем длину обоих слов, если она разная, пишем false ----
         if (word1.length() != word2.length()) {
-            task6.printFalse(word1, word2);
+            System.out.println(word1 + ", " + word2 + " -> " + "false");
             return;
         }
 // ---------- преобразуем полученные слова в Listы -----------------------
@@ -18,11 +17,9 @@ public class Task7Anagram {
         for (int i = 0; i < word1.length(); i++) {
             wordListFirst.add(word1.charAt(i));
         }
-        for (int i = 0; i < word1.length(); i++) {
+        for (int i = 0; i < word2.length(); i++) {
             wordListSecond.add(word2.charAt(i));
         }
-        System.out.println("wordListFirst = " + wordListFirst);
-        System.out.println("wordMapSecond = " + wordListSecond);
 
         boolean areTheSame = wordListFirst.containsAll(wordListSecond);
         boolean areTheSame2 = wordListSecond.containsAll(wordListFirst);

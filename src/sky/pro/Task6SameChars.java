@@ -5,47 +5,24 @@ import java.util.ArrayList;
 
 public class Task6SameChars {
 
-    public void areTheySameChars(String firstWord, String secondWord) {
-        boolean isDifferent = false;
-        List<Character> firstList = new ArrayList<Character>();
-        List<Character> secondList = new ArrayList<Character>();
-// ======== переводим строки со словами в список с символами ======
-        for (char c : firstWord.toCharArray()) {
-            firstList.add(c);
+    public void areTheySameChars(String word1, String word2) {
+// ---------- преобразуем полученные слова в Listы -----------------------
+        List<Character> wordListFirst = new ArrayList<>(word1.length());
+        List<Character> wordListSecond = new ArrayList<>(word1.length());
+
+        for (int i = 0; i < word1.length(); i++) {
+            wordListFirst.add(word1.charAt(i));
         }
-        for (char c : secondWord.toCharArray()) {
-            secondList.add(c);
+        for (int i = 0; i < word2.length(); i++) {
+            wordListSecond.add(word2.charAt(i));
         }
-        System.out.println("firstList = " + firstList + "    ||||    secondList = " + secondList);
-// ========  сравниваем посимвольно каждый List =============
-        isDifferent = isDifferentWords(firstList, secondList);
-        if (isDifferent) {
-            printFalse(firstWord, secondWord);
-            return;
-        }
-// ----------  меняем местами списки ----------------------------------
-        isDifferent = isDifferentWords(secondList, firstList);
-        if (isDifferent) {
-            printFalse(firstWord, secondWord);
-            return;
+
+        boolean areTheSame = wordListFirst.containsAll(wordListSecond);
+        boolean areTheSame2 = wordListSecond.containsAll(wordListFirst);
+        if (areTheSame && areTheSame2) {
+            System.out.println(word1 + ", " + word2 + " -> " + "true");
         } else {
-            System.out.println(firstWord + ", " + secondWord + " -> " + "true");
+            System.out.println(word1 + ", " + word2 + " -> " + "false");
         }
     }
-
-    // ********* внутренний метод, сравнивающий посимвольно  List ************
-    private boolean isDifferentWords(List<Character> firstList, List<Character> secondList) {
-        for (Character character : firstList) {
-            if (!secondList.contains(character)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    // ********* метод, печатающий fALSE ************
-    public void printFalse(String firstWord, String secondWord) {
-        System.out.println(firstWord + ", " + secondWord + " -> " + "false");
-    }
-
 }
