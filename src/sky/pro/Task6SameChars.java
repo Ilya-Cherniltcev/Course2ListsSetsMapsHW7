@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Task6SameChars {
 
-    public void areTheSameChars(String firstWord, String secondWord) {
+    public void areTheySameChars(String firstWord, String secondWord) {
         boolean isDifferent = false;
         List<Character> firstList = new ArrayList<Character>();
         List<Character> secondList = new ArrayList<Character>();
@@ -19,16 +19,16 @@ public class Task6SameChars {
         System.out.println("firstList = " + firstList + "    ||||    secondList = " + secondList);
 // ========  сравниваем посимвольно каждый List =============
         isDifferent = isDifferentWords(firstList, secondList);
-
-        printFalse(firstWord, secondWord);
         if (isDifferent) {
+            printFalse(firstWord, secondWord);
             return;
         }
 // ----------  меняем местами списки ----------------------------------
         isDifferent = isDifferentWords(secondList, firstList);
-        System.out.println("isDifferent = " + isDifferent);
-        printFalse(firstWord, secondWord);
-        if (!isDifferent) {
+        if (isDifferent) {
+            printFalse(firstWord, secondWord);
+            return;
+        } else {
             System.out.println(firstWord + ", " + secondWord + " -> " + "true");
         }
     }
@@ -43,9 +43,9 @@ public class Task6SameChars {
         return false;
     }
 
-    // ********* внутренний метод, печатающий fALSE ************
-    private void printFalse(String firstWord, String secondWord) {
-            System.out.println(firstWord + ", " + secondWord + " -> " + "false");
+    // ********* метод, печатающий fALSE ************
+    public void printFalse(String firstWord, String secondWord) {
+        System.out.println(firstWord + ", " + secondWord + " -> " + "false");
     }
 
 }

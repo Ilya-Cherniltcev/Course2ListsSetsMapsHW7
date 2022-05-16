@@ -53,14 +53,30 @@ public class Main {
         Task6SameChars task6 = new Task6SameChars();
         String word1 = "ab";
         String word2 = "abba";
-        task6.areTheSameChars(word1, word2);
+        task6.areTheySameChars(word1, word2);
 
-//        word2 = "ab";
-//        task6.areTheSameChars(word1, word2);
-//
-//        word1 = "abc";
-//        task6.areTheSameChars(word1, word2);
-//        word2 = "abccba";
-//        task6.areTheSameChars(word1, word2);
+        word2 = "ab";
+        task6.areTheySameChars(word1, word2);
+
+        word1 = "abc";
+        task6.areTheySameChars(word1, word2);
+        word2 = "abccba";
+        task6.areTheySameChars(word1, word2);
+        System.out.println("------------  конец задачи 6 ------------ ");
+
+// ********* Задача 7 (проверка на одинаковые буквы) *******
+        Task7Anagram task7 = new Task7Anagram();
+        word1 = "abc";
+        word2 = "bca";
+        task7.AreTheyAnagrams(word1, word2);
+        word1 = "abbc";
+        task7.AreTheyAnagrams(word1, word2);
+        word1 = "cat";
+        word2 = "act";
+        task7.AreTheyAnagrams(word1, word2);
+        word2 = "dog";
+        task7.AreTheyAnagrams(word1, word2);
+
+
     }
 }
