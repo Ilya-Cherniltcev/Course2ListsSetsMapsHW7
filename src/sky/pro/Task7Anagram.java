@@ -21,12 +21,12 @@ public class Task7Anagram {
             wordListSecond.add(word2.charAt(i));
         }
 
-        boolean areTheSame = wordListFirst.containsAll(wordListSecond);
-        boolean areTheSame2 = wordListSecond.containsAll(wordListFirst);
-        if (areTheSame && areTheSame2) {
-            System.out.println(word1 + ", " + word2 + " -> " + "true");
-        } else {
-            System.out.println(word1 + ", " + word2 + " -> " + "false");
+        for (Character c : wordListSecond) {
+            if (!wordListFirst.remove(c)) {
+                System.out.println(word1 + ", " + word2 + " -> " + "false");
+                return;
+            }
         }
+        System.out.println(word1 + ", " + word2 + " -> " + "true");
     }
 }

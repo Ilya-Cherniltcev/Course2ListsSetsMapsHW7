@@ -55,12 +55,12 @@ public class Main {
         String word2 = "abba";
         task6.areTheySameChars(word1, word2);
 
-        word2 = "ab";
+        word2 = "abb";
         task6.areTheySameChars(word1, word2);
 
-        word1 = "abc";
+        word1 = "abt";
         task6.areTheySameChars(word1, word2);
-        word2 = "abccba";
+        word2 = "abttbt";
         task6.areTheySameChars(word1, word2);
         System.out.println("------------  конец задачи 6 ------------ ");
 
